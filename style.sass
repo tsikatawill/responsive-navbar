@@ -1,0 +1,112 @@
+@import 'config'
+*
+    margin: 0
+    padding: 0
+
+a
+    color: white
+    text-decoration: none
+    
+body
+    font-size: 15px
+    height: 100vh
+    color: #fff
+    font-family: poppins
+    background: no-repeat center center/cover url(../bg.jpg)
+
+.space
+    height: 80vh
+
+.navbar
+    background: rgba(0, 0, 0, 0.5)
+    position: fixed
+    width: 100%
+    
+    // display: flex
+    // align-items: center
+    
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .logo
+            cursor: pointer
+        .logo:hover
+            transform: scale(1.05)
+            span
+                background: none
+                color: white
+                border: 2px solid white
+
+        h3
+            transition: all .3s ease-in
+            span
+                transition: all .5s ease
+                color: black
+                background: white
+                border-radius: 5px
+                padding: 2px
+
+        i.fa-bars
+            display: none
+
+        ul.nav
+            display: flex
+            list-style: none
+            transition: 0.3s ease
+            li
+                padding: 20px
+                height: 100%
+                a
+                    text-transform: uppercase
+                i
+                    padding-right: 10px
+                &:hover
+                    // padding-left: 30px
+                    border-bottom: 1px solid #fff
+                    background: rgba(0, 0, 0, 0.6)
+            &.active
+                border-top: 1px solid #fff
+                display: none
+                position: absolute
+                right: 0
+                top: 100%
+                background: rgba(0, 0, 0, 0.5)
+                width: 15rem
+                li
+                    border-bottom: 1px solid #fff
+                    transition: 0.2s ease
+                    cursor: pointer
+                    &:hover
+                        padding-left: 30px
+                        background: rgba(0, 0, 0, 0.6)
+            
+@media screen and ( min-width: 750px )
+    .container
+        padding: 0 5rem
+        ul.nav
+            display: block
+            i
+                display: none
+            &.active
+                display: none
+
+main, footer
+    color: black
+
+@media screen and ( max-width: 749px )
+    .container
+        padding: 0 20px
+
+    .navbar
+        padding: 20px 0
+        .container
+            padding: 0 20px
+            ul.nav
+                display: none
+                &.active
+                    display: block
+            i.fa-bars
+                display: block
+    
